@@ -126,8 +126,8 @@ return [
             'text'        => 'Financeiro',
             'icon'     => 'money,',
              'submenu' => [
-                ['text' => 'Balance',
-                  'url' => 'balance', 
+                ['text' => 'Saldo',
+                  'url' => 'sistema/balance', 
                 ],
                 [
                   'text' => 'Historico',
