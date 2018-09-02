@@ -21,3 +21,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\BillPay::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'date_due' => $faker->date(),
+        'value' => $faker->numberBetween(100,1000),
+    ];
+});
+

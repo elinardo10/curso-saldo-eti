@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,19 +124,27 @@ return [
 
         [
             'text'        => 'Financeiro',
-            'icon'     => 'money,',
+            'icon'     => 'money',
              'submenu' => [
                 ['text' => 'Saldo',
                   'url' => 'sistema/balance', 
                 ],
                 [
                   'text' => 'Historico',
-                  'url' => 'hitoric',
+                  'url' => 'sistema/historics',
                 ], 
                 
             ],
            
         ],
+
+        'Configurações da Conta',
+        [
+            'text' => 'Profile',
+            'url'  => 'sistema/perfil',
+            'icon' => 'user',
+        ],
+
             /*
     |--------------------------------------------------------------------------
     | Menu Items comentados para ocultar!

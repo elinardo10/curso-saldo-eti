@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::get('imagens', ['as'=> 'listar.img', 'uses' => 'ImagensController@index']);
+
+Route::resource('bill_pays', 'Sistema\BillPaysController',[
+	'except'=> ['create', 'edit']
+	]);
+

@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+Use App\Models\Balance;
+Use App\Models\Historic;
 
 class User extends Authenticatable
 {
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'image'
     ];
 
     /**
@@ -26,4 +28,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function balance(){
+
+       return $this->hasOne(Balance::class);
+    }
+
+    public function historics(){
+
+        return $this->hasMany(Historic::class);
+    }
+
+       public function getReceiver($receiver){
+        //pegando usuário recebedor da transfência
+        return $this->where('name', 'LIKE', "%$receiver%")
+                        ->orWhere('email', $receiver)
+                        ->get()
+                        ->first();
+    }
 }
